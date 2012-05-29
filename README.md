@@ -1,4 +1,2 @@
 tacomquem
-
-Felipe: Primeiro Commit!
 =========
