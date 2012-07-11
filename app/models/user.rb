@@ -12,5 +12,16 @@ class User < ActiveRecord::Base
   has_many :friends, :through => :friendships
   has_many :friendships
   
-  scope :without_self, lambda { |id| where('id <> ?', id) }
+  scope :without, lambda { |id| where('id not in (?)', id) }
+  
+  
+  def self_and_friends
+    list = self.friends.collect(&:id)
+    list << self.id
+  end
+  
+  def to_s
+    email
+  end
+  
 end
