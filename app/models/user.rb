@@ -8,4 +8,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  
+  has_many :friends, :through => :friendships
+  has_many :friendships
+  
+  scope :without_self, lambda { |id| where('id <> ?', id) }
 end

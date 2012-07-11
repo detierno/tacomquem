@@ -1,0 +1,13 @@
+<h2>Adicionar amigos</h2>
+
+<% @all_users.each do |user| %>
+  <p><%= user.email %>
+  <%= link_to 'add as friend', friendships_path(friend_id: user.id), method: :post %></p>
+<% end %>
+
+<h2>Lista de amigos</h2>
+
+<% @friends.each do |friend| %>
+  <%= friend.email %>
+<% end %>
+
