@@ -5,4 +5,9 @@ module ApplicationHelper
     link_to 'delete', url, html_options
   end
   
+  def gravatar_tag(email, options = {})
+    email = Digest::MD5.hexdigest(email)
+    image_tag "http://www.gravatar.com/avatar/#{email}?size=#{options[:size]}", options
+  end
+  
 end
