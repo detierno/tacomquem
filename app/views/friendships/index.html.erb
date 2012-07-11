@@ -4,10 +4,12 @@
   <% @all_users.each do |user| %>
     <p>
       <%= user %>
-      <%= link_to 'add as friend', friendships_path(friend_id: user.id), method: :post %>
+      <%= link_to 'add as friend', friendships_path(friend_id: user.id), method: :post, class: 'btn btn-success btn-mini' %>
     </p>
   <% end %>
 <% end %>
+
+<hr />
 
 <h2>Lista de amigos</h2>
 
