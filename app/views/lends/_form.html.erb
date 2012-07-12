@@ -1,35 +1,20 @@
-<%= form_for @lend, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :item, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :item, :class => 'text_field' %>
+<%= form_for lend, :html => { :class => 'form-horizontal' } do |f| %>
+  
+  <%= f.text_field :item, :class => 'text_field span4', placeholder: 'O que você emprestou?' %>
+  
+  <div id="text_or_friend">
+    <div id="use_text_friend">
+      <%= f.text_field :friend_name, :class => 'text_field', placeholder: 'Pra quem?' %>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :use_text, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :use_text %>
+    <div id="select_friend">
+      <%= collection_select(:lend, :friend_id, current_user.friends, :id, :email, :prompt => 'Pra quem?') %>
     </div>
   </div>
   
-  <div id="use_text_friend" class="control-group">
-    <%= f.label :friend_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :friend_name, :class => 'text_field' %>
-    </div>
-  </div>
+  <span>
+    <%= f.check_box :use_text %> outra pessoa
+  </span>
   
-  <div id="select_friend" class="control-group">
-    <%= f.label :friend_id, :class => 'control-label' %>
-    <div class="controls">
+  <%= f.submit nil, :class => 'btn btn-success span2' %>
 
-      <%= collection_select(:lend, :friend_id, current_user.friends, :id, :email, :prompt => true) %>
-    </div>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                lends_path, :class => 'btn' %>
-  </div>
 <% end %>

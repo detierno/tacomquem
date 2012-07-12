@@ -1,0 +1,7 @@
+$("#new_lend").html("<%= escape_javascript( render("form", :lend => @lend ) ) %>");
+
+<% if @lend.use_text %>
+  $('#select_friend').hide()
+<% else %>
+  $('#use_text_friend').hide()
+<% end %>

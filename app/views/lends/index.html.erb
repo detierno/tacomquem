@@ -1,5 +1,7 @@
 <%- model_class = Lend.new.class -%>
+
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -19,7 +21,7 @@
         <td><%=l lend.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_lend_path(lend), :class => 'btn btn-mini' %>
+                      edit_lend_path(lend), :class => 'btn btn-mini', remote: true %>
           <%= link_to_destroy lend_path(lend) %>
         </td>
       </tr>
@@ -27,6 +29,10 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_lend_path,
-            :class => 'btn btn-primary' %>
+<hr>
+
+<h2>Novo empréstimo</h2>
+
+<div id="new_lend">
+  <%= render 'form', :lend => current_user.lends.build  %>
+</div>

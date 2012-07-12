@@ -9,5 +9,6 @@ jQuery ->
       $('#select_friend').show()
 
      
-  $('#lend_use_text').click(toggle_display)
+  $('#lend_use_text').live 'click', ->
+    toggle_display()
   $(document).ready(toggle_display)

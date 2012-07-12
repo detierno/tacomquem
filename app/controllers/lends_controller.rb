@@ -34,7 +34,7 @@ class LendsController < ApplicationController
 
   # GET /lends/1/edit
   def edit
-    @lend = Lend.find(params[:id])
+    @lend = current_user.lends.find(params[:id])
   end
 
   # POST /lends
