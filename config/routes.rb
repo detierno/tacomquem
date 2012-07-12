@@ -1,4 +1,6 @@
 Tacomquem::Application.routes.draw do
+  resources :lends
+
   devise_for :users
 
   resources :friendships, only: [:index, :create, :destroy]
@@ -52,7 +54,7 @@ Tacomquem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'friendships#index'
+  root :to => 'lends#index'
 
   # See how all your routes lay out with "rake routes"
 

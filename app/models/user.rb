@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   
   has_many :friends, :through => :friendships
   has_many :friendships
+  has_many :lends
   
   scope :without, lambda { |id| where('id not in (?)', id) }
   
@@ -23,5 +24,6 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+  
   
 end

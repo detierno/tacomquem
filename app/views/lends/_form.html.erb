@@ -1,0 +1,27 @@
+<%= form_for @lend, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :item, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%#= f.label :friend_name, :class => 'control-label' %>
+    <div class="controls">
+      <%#= f.text_field :friend_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :friend_id, :class => 'control-label' %>
+    <div class="controls">
+
+      <%= collection_select(:lend, :friend_id, current_user.friends, :id, :email, :prompt => true) %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                lends_path, :class => 'btn' %>
+  </div>
+<% end %>
