@@ -1,3 +1,13 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+jQuery ->
+  toggle_display =->
+    if $('#lend_use_text').is(':checked')
+      $('#select_friend').hide()
+      $('#use_text_friend').show()
+      $('option:selected').removeAttr('selected')
+    else
+      $('#use_text_friend').hide()
+      $('#select_friend').show()
+
+     
+  $('#lend_use_text').click(toggle_display)
+  $(document).ready(toggle_display)

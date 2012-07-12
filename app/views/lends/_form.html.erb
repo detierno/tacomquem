@@ -6,12 +6,20 @@
     </div>
   </div>
   <div class="control-group">
-    <%#= f.label :friend_name, :class => 'control-label' %>
+    <%= f.label :use_text, :class => 'control-label' %>
     <div class="controls">
-      <%#= f.text_field :friend_name, :class => 'text_field' %>
+      <%= f.check_box :use_text %>
     </div>
   </div>
-  <div class="control-group">
+  
+  <div id="use_text_friend" class="control-group">
+    <%= f.label :friend_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :friend_name, :class => 'text_field' %>
+    </div>
+  </div>
+  
+  <div id="select_friend" class="control-group">
     <%= f.label :friend_id, :class => 'control-label' %>
     <div class="controls">
 

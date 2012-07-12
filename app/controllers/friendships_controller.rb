@@ -24,7 +24,7 @@ class FriendshipsController < ApplicationController
   
   def destroy  
     @friendship = current_user.friendships.find_by_friend_id(params[:id])  
-    @friendship.destroy  
+    @friendship.destroy 
     flash[:notice] = "Friendship cancelled."
      
     redirect_to friendships_url

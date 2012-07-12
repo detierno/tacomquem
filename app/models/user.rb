@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   has_many :friends, :through => :friendships
-  has_many :friendships
-  has_many :lends
+  has_many :friendships, dependent: :destroy
+  has_many :lends, dependent: :destroy
   
   scope :without, lambda { |id| where('id not in (?)', id) }
   
