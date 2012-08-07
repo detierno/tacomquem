@@ -1,0 +1,4 @@
+<%= form_for [@lend, @reminder] do |f| %>
+    <%= f.date_select :due_in %>
+    <%= f.submit class: 'btn btn-success' %>
+<% end %>
