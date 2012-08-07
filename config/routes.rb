@@ -1,5 +1,7 @@
 Tacomquem::Application.routes.draw do
-  resources :lends
+  resources :lends do
+    resources :reminders
+  end
 
   devise_for :users
 

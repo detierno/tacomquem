@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:friend_name) %></th>
       <th><%= model_class.human_attribute_name(:friend_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,7 +19,8 @@
         <td><%= lend.item %></td>
         <td><%= lend.friend_name %></td>
         <td><%= lend.friend %></td>
-        <td><%=l lend.created_at %></td>
+        <td><%=l lend.created_at, format: :short %></td>
+        <td><%= reminder_counter(lend) %> <%= link_to 'lembrete', new_lend_reminder_path(lend) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_lend_path(lend), :class => 'btn btn-mini', remote: true %>
