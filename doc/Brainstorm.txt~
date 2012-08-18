@@ -1,0 +1,69 @@
+Está com quem?
+
+Sistema
+
+Ao digitar o endereço eletrônico http://www.estacomquem.com.br o usuário será encaminhado para a página de login do sistema. Caso for um usuário registrado será solicitado o login, caso não será requisitado o registro desse usuário.
+
+No registro será necessário preencher:
+
+*Nome de usuário (Apelido)
+*Senha
+Imagem de perfil
+*Nome completo
+*Email
+*Endereco
+?Pagina no FB
+* Campos obrigatórios
+
+O usuário ao logar no sistema será encaminhado para a pagina principal do sistema, onde será exibido um mapa com a localização default apontando para o endereço cadastrado pelo usuário no seu registro.
+
+A partir desta localização serão exibidos no mapa, todos os amigos cadastrados com endereço válido pelo usuário, representados no mapa por um box de informações com os seguintes campos:
+
+Imagem de perfil
+Apelido
+Avaliação geral de confiança
+
+No cadastro de amigo o usuário deverá as seguintes informações:
+
+*Apelido
+Imagem de perfil
+*Nome Completo
+*Email
+*Endereco
+?Pagina no FB
+* Campos obrigatórios
+
+Ao selecionar o box de informação de um determinado amigo no mapa, será exibido uma listagem de todos os pertences do usuário emprestados para esse amigo e cada item dessa listagem possuirá um link de solicitação de devolução (caso o usuário queira o objeto antes do tempo acordado com o amigo), essa ação será efetuada por envio de email.
+
+Para cadastrar um pertence serão necessárias as seguintes informações:
+
+Titulo
+Descricao
+?Estado [Novo, Semi-Novo, Usado]
+Status [Ativo, Inativo]
+
+Quando um usuário emprestar um pertence para um amigo, deverá informar os seguinte dados:
+
+Pertence
+Amigo
+Data Emprestimo
+Data Devolução
+Status [default: Emprestado]
+
+Quando um pertence emprestado atingir a data de devolução o sistema irá enviar um email para esse amigo solicitando o objeto emprestado de volta (no email de cobrança será enviado um link de registro do sistema para o amigo) e outro email para o usuário dizendo que a cobrança foi efetuada.
+
+Quando o usuário receber o pertence de volta ele vai dar baixa no emprestimo da seguinte forma:
+Status [Devolvido]
+Avaliar Amigo no Emprestimo [1..5]
+Descricao da Devolução/Avaliação
+
+Ao avaliar o amigo no emprestimo, o total da avaliação desse amigo será exibido no box de informação do amigo no mapa, assim o usuário poderá controlar a confiança dele.
+
+Todos as ações do sistema terão integração com o FB, caso o usuário deseje habilita-la.
+
+Integracao FB
+
+Login
+Ao emprestar um pertence para um amigo
+Ao avaliar esse amigo no emprestimo
+Ao cobrar um amigo se a data de devolução do emprestimo for ultrapassada
